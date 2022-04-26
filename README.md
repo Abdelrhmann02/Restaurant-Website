@@ -1,2 +1,2 @@
 # Restaurant-Website
-CoursWork project 
+CourseWork project 
