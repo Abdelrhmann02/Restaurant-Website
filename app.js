@@ -14,7 +14,6 @@ app.use(express.static('public'));
 app.engine('mustache', mustache(views_path + '/partials'));
 app.set('view engine', 'mustache');
 
-
 app.use('/', router);
 
 app.listen(PORT, () => {

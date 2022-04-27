@@ -153,56 +153,22 @@ iframe {
 /*=================================================================== Header Desktop ===*/
 #wrap_header {
 	position: absolute;
-	background-color: transparent;
-	z-index: 1000;
+	z-index: 100;
 	width: 100%;
-	height: 125px;
+	height: 50px;
+	margin: 0;
+	padding: 0;
 }
-/* #wrap_header a {
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-} */
-
-/*------------------------------------------------------------------- Logo ---*/
-.logo {
-	width: 200px;
-	height: 100%;
-	left: 0;
-	top: 0;
-	position: absolute;
-}
-.logo a{
-	display: block;
-	width: 105px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-}
-.logo>a>img {
-	max-width: 100%;
-	vertical-align: middle;
-}
-
 /*------------------------------------------------------------------- Menu ---*/
-@keyframes showSubMenu {
-	0% {
-		visibility: visible;
-		opacity: 0
-	}
-	50% {
-		opacity: 0.5
-	}
-	100% {
-		opacity: 1;
-		visibility: visible;
-	}
+.main_nav_bar {
+	width: 100%;
+	margin: auto;
+	background-color: #3e3a3a;
+	opacity: 0.5;
+	right: 0;
+	left: 0; 
 }
-
 .main_nav {
-	
 	width: 100%;
 	margin: auto;
 	right: 0;
@@ -210,24 +176,57 @@ iframe {
 }
 .menu {
 	width: 100%;
-	height: 100%;
+	height: 50px;
 	position: relative;
-	margin: auto;
+	padding: 0;
+}
+
+.main_title{
+	list-style-type: none;
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin-top: 0px;
+	margin-right: auto;
+	position: absolute;
+}
+
+.main_title>li {
+	display: block;
+	float: left;
+	height: 50px;
+	position: absolute;	
+	padding-left: 15px;
+	padding-right: 15px; 
+}
+
+.main_title > li > a {
+	font-family: OpenSans-Bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	line-height: 4;
+	color: #ffffff;
+	padding: 5px;
+}
+
+.main_title>li:hover > a{
+ 	color: #e52233;
+ 	text-decoration: none;
 }
 .main_menu {
 	list-style-type: none;
 	display: block;
 	width: 100%;
-	height: 70px;
-	margin-top: 27px;
+	height: 50px;
+	margin-top: 0px;
 	margin-right: auto;
-	position: relative;
+	position: absolute;
 }
 .main_menu>li {
 	display: block;
 	float: right;
-	height: 100%;
-	position: relative;	
+	height: 50px;
+	position: absolute;	
 	padding-left: 15px;
 	padding-right: 15px; 
 }
@@ -235,8 +234,8 @@ iframe {
 	font-family: OpenSans-Bold;
 	font-size: 14px;
 	text-transform: uppercase;
-	line-height: 5;
-	color: #c6c6c6;
+	line-height: 4;
+	color: #ffffff;
 	padding: 5px;
 }
 
