@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>head}}
+</head>
+<body  class="animsition">
+	<header>
+		{{>header}}
+	</header>
+
+	<section id="slider-deli">
+		<!-- Slider -->
+		<div class="rev_slider_wrapper fullscreen-container" >
+			<div id="rev_slider_1" class="rev_slide fullscreenbanner" style="display: none;">
+				<ul>
+					<!-- Slide 1 -->
+					<li data-transition="fade">
+						<img src="images/slider1.jpg" alt="404 Not Found" class="rev-slidebg"
+						data-bgposition="center center"
+						data-bgfit="cover" 
+         				data-bgrepeat="no-repeat">
+
+						<h3 class="tp-caption tp-resizeme caption-1" 
+						data-frames='[{"delay":500,"speed":1800,"frame":"0","from":"x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:1;","mask":"x:[100%];y:0;s:inherit;e:inherit;","to":"o:1;","ease":"Power3.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
+					    data-x="center" 
+					    data-y="middle" 
+					    data-hoffset="0" 
+					    data-voffset="['-50','-50','-100','-120']" 
+					    data-width="['1140','960','720','540']"
+					    data-lineheight="['150', '150', '120', '100']"
+					    data-fontsize="['110', '110', '100', '90']"
+					    data-height="['auto']">PAGE NOT FOUND</h3>
+						
+						</div>
+					</li>
+				</ul>				
+			</div>
+		</div>
+		<!-- End Slider -->
+	</section>
+
+	<footer>
+		{{>footer}}
+	</footer>
+{{>script}}
+</body>
+</html>
