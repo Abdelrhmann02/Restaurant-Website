@@ -36,7 +36,7 @@
                 },
  
                 arrows: {
-                    enable: true,
+                    enable: false,
                     style: 'hesperiden',
                     hide_onleave: true
 

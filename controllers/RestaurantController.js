@@ -23,22 +23,3 @@ exports.menu = async (req, res) => {
   
     res.render("menu", { lunch, dinner});
   };
-
-/*exports.menu = function(req,res){
-    res.locals.title = "Menu";
-    res.locals.class_type ="main_nav";
-    MenuDB.GetAvailableLunch().then((list) => {
-            res.render('menu', {
-                'lunch': list
-            });
-            console.log('Promise Resolved');
-        })
-        .catch((err) =>{
-            console.log('Promise rejected', err);
-        })
-}
-*/
-exports.not_found = function(req,res){
-    res.status(404);
-    res.render('notfound');
-}
