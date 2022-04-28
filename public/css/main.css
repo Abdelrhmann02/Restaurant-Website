@@ -334,6 +334,9 @@ iframe {
 }
 /*------------------------------------------------------------------- logo mobile ---*/
 .logo-mobile {
+	font-family: OpenSans-Bold;
+	font-size: 14px;
+	text-transform: uppercase;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -662,6 +665,7 @@ iframe {
 	padding-top: 8px;
 	font-family: PlayfairDisplay-Bold;
 	font-size: 15px;
+	text-transform: uppercase;
 	color: #333333;
 }
 .hover-link-color:hover{
