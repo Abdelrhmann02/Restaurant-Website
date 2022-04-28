@@ -17,5 +17,5 @@ app.set('view engine', 'mustache');
 app.use('/', router);
 
 app.listen(PORT, () => {
-    console.log(`app started at port ${PORT}`);
+    console.log(`Express started in ` + `${app.get('env')} mode at http://localhost:${PORT}` + `; press ctrl-c to terminate.`)
 })

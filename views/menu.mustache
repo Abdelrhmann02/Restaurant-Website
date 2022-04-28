@@ -40,28 +40,30 @@
 							<div class="row list-food">
 								<div class="col-12">
 									<!-- item food -->
-									<div class="item-food row wow fadeInRight" data-wow-delay="0.2s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color">Name</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
+									{{#lunch}}
+										<div class="item-food row wow fadeInRight" data-wow-delay="0.2s">
+											<div class="col-12 col-sm-10 text-list-food ">
+												<div class="name-price row">
+													<div class="name-food col-12 col-sm-auto"><a class="hover-link-color">{{Name}}</a></div>
+													<div class="line-food col">
+														<div class="add-line-run"></div>
+													</div>
+												</div>
+												<div class="row"> 
+													<div class="col-12 col-sm-12 info-food">
+														{{Description}}  
+													</div>
+													<div class="col-12 col-sm-12 info-food">
+														Ingerdients: {{Ingerdients}}  
+													</div>
+													<div class="col-12 col-sm-12 info-food">
+														Allergies: {{Allergy}}  
+													</div>
 												</div>
 											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Discription  
-												</div>
-												<div class="col-12 col-sm-12 info-food">
-													Ingeredients  
-												</div>
-												<div class="col-12 col-sm-12 info-food">
-													Allergy  
-												</div>
-											</div>
+											<div class="price-food col-12 col-sm-2">&#163;{{price}}</div>
 										</div>
-										<div class="price-food col-12 col-sm-2">&#36;Price</div>
-									</div>
+									{{/lunch}}	
 								</div>
 							</div>
 						</div>
@@ -98,122 +100,30 @@
 
 								<div class="col-12">
 									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="0.2s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Lobster caponata</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
+									{{#dinner}}
+										<div class="item-food row wow fadeInLeft" data-wow-delay="0.2s">
+											<div class="col-12 col-sm-10 text-list-food ">
+												<div class="name-price row">
+													<div class="name-food col-12 col-sm-auto"><a class="hover-link-color">{{Name}}</a></div>
+													<div class="line-food col">
+														<div class="add-line-run"></div>
+													</div>
+												</div>
+												<div class="row"> 
+													<div class="col-12 col-sm-12 info-food">
+														{{Description}}
+													</div>
+													<div class="col-12 col-sm-12 info-food">
+														Ingerdients: {{Ingerdients}}
+													</div>
+													<div class="col-12 col-sm-12 info-food">
+														Allergies: {{Allergy}}
+													</div>
 												</div>
 											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Suspendisse sodales congue maximus
-												</div>
-											</div>
+											<div class="price-food col-12 col-sm-2">&#163;{{price}}</div>
 										</div>
-										<div class="price-food col-12 col-sm-2">&#36;10.00</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="0.4s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Pork ribollita</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
-												</div>
-											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Suspendisse sodales congue maximus 
-												</div>
-											</div>
-										</div>
-										<div class="price-food col-12 col-sm-2">&#36;15.00</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="0.6s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Chocolate budino</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
-												</div>
-											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Interdum et malesuada fames primis in faucibus
-												</div>
-											</div>
-										</div>
-										<div class="price-food col-12 col-sm-2">&#36;15.00</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="0.8s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Pine nut sbrisalona</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
-												</div>
-											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Proin lacinia nisl ut ultricies posuere nulla ut  
-												</div>
-											</div>
-										</div>
-										<div class="price-food col-12 col-sm-2">&#36;20.00</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="1s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Potato gnocchi</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
-												</div>
-											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Proin lacinia nisl ut ultricies posuere nulla ut 
-												</div>
-											</div>
-										</div>
-										<div class="price-food col-12 col-sm-2">&#36;10.00</div>
-									</div>
-								</div>
-
-								<div class="col-12">
-									<!-- item food -->
-									<div class="item-food row wow fadeInLeft" data-wow-delay="1.2s">
-										<div class="col-12 col-sm-10 text-list-food ">
-											<div class="name-price row">
-												<div class="name-food col-12 col-sm-auto"><a class="hover-link-color" href="product-detail.html">Pork ribollita</a></div>
-												<div class="line-food col">
-													<div class="add-line-run"></div>
-												</div>
-											</div>
-											<div class="row"> 
-												<div class="col-12 col-sm-12 info-food">
-													Suspendisse sodales congue maximus 
-												</div>
-											</div>
-										</div>
-										<div class="price-food col-12 col-sm-2">&#36;15.00</div>
-									</div>
+									{{/dinner}}
 								</div>
 							</div>
 						</div>
