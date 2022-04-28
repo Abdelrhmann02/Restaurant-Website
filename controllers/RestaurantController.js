@@ -11,5 +11,7 @@ exports.about = function(req,res){
 }
 
 exports.menu = function(req,res){
+    res.locals.title = "Menu";
+    res.locals.class_type ="main_nav";
     res.render('menu');
 }
