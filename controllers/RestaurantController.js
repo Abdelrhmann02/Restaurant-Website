@@ -13,6 +13,12 @@ exports.about = function(req,res){
     res.render('about-us');
 }
 
+exports.admin = function(req,res){
+  res.locals.title = "Admin";
+  res.locals.class_type ="main_nav";
+  res.render('user/admin');
+}
+
 exports.menu = async (req, res) => {
     res.locals.title = "Menu";
     res.locals.class_type ="main_nav";
@@ -23,3 +29,4 @@ exports.menu = async (req, res) => {
   
     res.render("menu", { lunch, dinner});
   };
+

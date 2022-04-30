@@ -50,6 +50,7 @@ Title:	18px/1.6 'OpenSans', Arial, sans-serif;
     src: url('../fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf');
 }
 
+
 * {margin: 0; padding: 0; box-sizing: border-box;}
 button {outline: none !important;}
 body, html {
@@ -99,17 +100,17 @@ iframe {
 	transform: scale(1.1);
 }
 
-.larg-text {
+.large-text {
 	font-family: PlayfairDisplay-Bold;
 	font-size: 50px;
-	color: #333333;
+	color: #ffffff;
 }
 
 .medium-text-2 {
 	font-family: PlayfairDisplay-Bold;
 	font-size: 20px;
 	line-height: 1.2;
-	color: #333333;
+	color: #ffffff;
 }
 .medium-text {
 	font-family: OpenSans;
@@ -470,6 +471,7 @@ iframe {
 	height: 10px;
     background-color: #e52233;
 }
+
 #slider-deli .caption-1 {
 	font-family: PlayfairDisplay-Bold;
 	font-size: 110px;
@@ -1509,6 +1511,9 @@ footer ul li a:hover {
 .bg-menu-page-01 {
 	background-image: url('/images/menu.jpg');
 }
+.bg-admin {
+	background-image: url('/images/menu.jpg');
+}
 
 .our-menu.for-menu-page .title-our-menu {
 	border: none;
@@ -1729,41 +1734,47 @@ footer ul li a:hover {
 }
 
 /*///////////////////////////////////////////////////////////////////////////////////// Contact Us /*/
-.content-contact-us {
-	padding-top: 100px;
+.admin-page {
+	padding-top: 178px;
 	padding-bottom: 100px;
+	background-image: url('/images/menu12.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
 }
-.content-contact-us ul li {
-	list-style-type: none;
-	color: #666666;
+
+.admin-page h2 {
+	font-family: PlayfairDisplay-Bold;
+	font-size: 110px;
+	color: #fafafa;
+	line-height: 1.0;
+	white-space: normal;
+	text-align: center !important;
+}
+.admin-page h4 {
+	color: #fafafa;
+	font-family: PlayfairDisplay-Bold;
+	font-size: 30px;
+	letter-spacing: 1px;
+	text-align: center !important;
+}
+
+.form-group label{
 	font-family: OpenSans;
-	font-size: 14px;
-	line-height: 2.14;
+	color: #fafafa;
 }
-.content-contact-us ul li a {
-	color: #666666;
-	font-family: OpenSans;
-	font-size: 15px;
-	line-height: 2.14;
-	font-weight: bold;
+input[type=text], input[type=password]{
+	height: 49px;
+	background-color: #fafafa;
+	border: 1px solid #999999;
+	margin-bottom: 10px;
+	padding-left: 20px;
 }
-.content-contact-us ul li a:hover {
-	text-decoration: none; 
-	color: #e52233;
+form{
+	text-align: center;
+	margin: auto;
+	max-width: 64em;
 }
-
-.follow-us a {
-	padding-left: 18px;
-}
-
-.content-contact-us .larg-text {
-	padding-bottom: 40px;
-}
-
-.content-contact-us p {
-	padding-bottom: 5px;
-}
-
 .content-contact-us input {
 	width: 100%;
 	height: 49px;
