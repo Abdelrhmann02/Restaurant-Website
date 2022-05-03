@@ -8,8 +8,8 @@ router.get("/",controller.home_page);
 router.get("/about",controller.about);
 router.get("/menu",controller.menu);
 
-router.get('/register',controller.show_register_page);
-router.post('/register',controller.add_new_user);
+router.get('/register',verify,controller.show_register_page);
+router.post('/register',verify,controller.add_new_user);
 
 router.get('/admin',controller.show_login_page);
 router.post('/login',login,controller.handle_login);
