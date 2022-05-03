@@ -42,8 +42,10 @@ exports.verify = function(req,res,next){
         {
             res.status(403).send();
         }
+        else{
         req.user = data.username
         next();
+        }
     })
     
 };
