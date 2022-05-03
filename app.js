@@ -7,8 +7,13 @@ const public = path.join(__dirname,'public');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const views_path = path.join (__dirname,'/views');
+require('dotenv').config()
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser')
 
-app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.json())
+app.use(cookieParser())
+app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 app.engine('mustache', mustache(views_path + '/partials'));
