@@ -1,4 +1,5 @@
 const req = require('express/lib/request');
+const Menu = require('../models/RestaurantModel');
 const RestaurantDB = require('../models/RestaurantModel');
 const MenuDB = new RestaurantDB('menu.db');
 const UserDB = require('../models/UserModel');
@@ -33,6 +34,21 @@ exports.menu = async (req, res) => {
     res.render("menu", { lunch, dinner});
   };
 
+exports.show_delete = async(req,res) =>{
+    res.locals.title = "Delete Meals";
+    const [Meals] =  await Promise.all([
+      MenuDB.GetAll()
+    ]);
+    res.render('delete', {Meals});
+}
+
+exports.post_delete = async(req,res) => {
+  const Meals = req.body.Meal;
+  for (var i = 0; i < Meals.length; i++) {
+    MenuDB.Delete(Meals[i]);
+  }
+  res.redirect('/admin-panel')
+  };
   
 exports.show_register_page = function(req,res){
   res.locals.title ="Register Page";
@@ -54,7 +70,7 @@ exports.add_new_user = function(req,res)
       return;
     }
     UserDB.create(user,password);
-    res.redirect("/login"); //to be modifed later
+    res.redirect("/admin-panel"); //to be modifed later
   });
 }
 
@@ -85,5 +101,5 @@ exports.show_add_new = function(req,res){
 exports.post_add_new = function(req,res){
   MenuDB.addEntry(req.body.Name,req.body.Description,req.body.Ingredients,req.body.Allergy,req.body.Category,req.body.Availability,req.body.Price);
   res.redirect('/admin-panel')
-
 }
+

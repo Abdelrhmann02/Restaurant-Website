@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>head}}
+</head>
+<body>
+	<header>
+		{{>header}}
+	</header>
+	
+	<section class="admin-page">
+	<h1>Delete Meal</h1>
+	<div class="container">
+		<form method="post" role="form">
+			<div class="row">
+			{{#Meals}}
+				<div class="col-sm-4">
+					<div class ="form-group">
+						<input type="checkbox" id={{Name}} name="Meal" value="{{Name}}">
+						<label for={{Name}}">{{Name}}</label>
+					</div>
+				</div>
+			{{/Meals}}
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<input type="submit" value="Delete" class="btn2">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	</section>
+	
+	{{>script}}
+</body>
+</html>

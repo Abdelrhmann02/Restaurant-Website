@@ -39,6 +39,24 @@ class Menu{
         })
     }
 
+    GetAll(){
+        return new Promise((resolve,reject) => {
+            this.db.find({}, function(err,entries){
+                if(err){
+                    reject(err);
+                }
+                else{
+                    resolve(entries);                }
+            })
+        })
+    }
+
+    Delete(name){
+        this.db.remove({'Name': name}, {}, function (err, numRemoved) {
+            // numRemoved = 1
+          });
+    }
+
     addEntry(name,desc,ingred,allergy,cat,aval,price){
         var entry = {
             Name: name,
