@@ -13,7 +13,7 @@ exports.home_page = function(req,res) {
 exports.about = function(req,res){
     res.locals.title = "About Us";
     res.locals.class_type ="main_nav_bar";
-    res.render('about-us');
+    res.render('about_us');
 }
 
 exports.admin = function(req,res){
@@ -75,4 +75,15 @@ exports.admin_panel = function(req,res){
 
 exports.logout = function(req,res){
   res.clearCookie("jwt").status(200).redirect('/admin')
+}
+
+exports.show_add_new = function(req,res){
+    res.locals.title="Add New Meal";
+    res.render('add_new');
+}
+
+exports.post_add_new = function(req,res){
+  MenuDB.addEntry(req.body.Name,req.body.Description,req.body.Ingredients,req.body.Allergy,req.body.Category,req.body.Availability,req.body.Price);
+  res.redirect('/admin-panel')
+
 }

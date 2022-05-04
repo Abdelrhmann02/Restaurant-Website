@@ -1740,10 +1740,20 @@ footer ul li a:hover {
 	padding-bottom: 100px;
 	background-image: url('/images/menu12.jpg');
 	height: 100%;
-	width: 90%
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+}
+
+.admin-page h1 {
+	font-family: PlayfairDisplay-Bold;
+	font-size: 70px;
+	color: #fafafa;
+	position: relative;
+	top: -100px;
+	line-height: 1.0;
+	white-space: normal;
+	text-align: center !important;
 }
 
 .admin-page h2 {

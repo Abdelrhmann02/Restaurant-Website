@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>head}}
+</head>
+<body>
+	<header>
+		{{>header}}
+	</header>
+	
+	<section class="admin-page">
+	<h1>Add New Meal</h1>
+	<div class="container">
+		<form method="post" role="form">
+			<div class="row">
+				<div class="col">
+					<div class ="form-group">
+						<label for="Name">Name</label>
+						<input type="text" class="form-control" id="Name" name="Name" placeholder="Name of the meal" required>
+					</div>
+				</div>
+				<div class="col">
+					<div class ="form-group">
+						<label for="Description">Description</label>
+						<textarea  class="form-control" id="Description" name="Description" placeholder="Description of the meal" required></textarea>
+					</div>
+				</div>
+				<div class="col">
+					<div class ="form-group">
+						<label for="Ingredients">Ingredients</label>
+						<textarea  class="form-control" id="Ingredients" name="Ingredients" placeholder="Ingredients of the meal" required></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					<div class ="form-group">
+						<label for="Allergy">Allergies</label>
+						<textarea  class="form-control" id="Allergy" name="Allergy" placeholder="Allergies of the meal" required></textarea>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class ="form-group">
+						<label for="Category">Category</label><br>
+						<input type="radio" id="Lunch" name="Category" value="Lunch">
+						<label for="Lunch">Lunch</label><br>
+						<input type="radio" id="Dinner" name="Category" value="Dinner">
+						<label for="Dinner">Dinner</label><br>
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div class ="form-group">
+						<label for="Availability">Available</label><br>
+						<input type="radio" id="Yes" name="Availability" value=true>
+						<label for="Yes">Yes</label><br>
+						<input type="radio" id="No" name="Availability" value=false>
+						<label for="No">No</label><br>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class ="form-group">
+						<label for="Price">Price</label><br>
+						<input type="Number" class="form-control" id="Price" name="Price" placeholder="Price of the meal" required>
+					</div>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<input type="submit" value="Add" class="btn2">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	</section>
+	
+	{{>script}}
+</body>
+</html>

@@ -20,7 +20,7 @@ exports.login = function(req,res,next){
         bcrypt.compare(password,user.password,function(err,result){
             if(result){
                 let payload = {username:username};
-                let accessToken = jwt.sign(payload,process.env.ACCESS_TOKEN_SECRET,{expiresIn: 120});
+                let accessToken = jwt.sign(payload,process.env.ACCESS_TOKEN_SECRET,{expiresIn: 86000});
                 res.cookie("jwt",accessToken);
                 next();
             }
@@ -47,6 +47,5 @@ exports.verify = function(req,res,next){
         next();
         }
     })
-    
 };
 

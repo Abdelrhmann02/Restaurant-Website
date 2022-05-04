@@ -16,6 +16,9 @@ router.post('/login',login,controller.handle_login);
 
 router.get('/admin-panel',verify,controller.admin_panel)
 router.get('/logout',verify,controller.logout)
+
+router.get('/add_new',controller.show_add_new)
+router.post('/add_new',controller.post_add_new)
 //handle 404 requests
 router.use(function(req,res) {
     res.status(404);
