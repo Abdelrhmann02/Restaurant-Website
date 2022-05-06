@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>head}}
+</head>
+<body>
+	<header>
+		{{>header}}
+	</header>
+	
+	<section class="admin-page">
+		<h1>Update Meals</h1>
+		<div class="container">
+			<div class="update-page">
+				<div class="row">
+					{{#Meals}}
+						<div class="col-sm-4">
+							<a href="/edit_meal/{{_id}}">{{Name}}</a>
+							<br>
+						</div>
+				{{/Meals}}
+				</div>
+			</div>
+		</div>
+	</section>
+	{{>script}}
+</body>
+</html>

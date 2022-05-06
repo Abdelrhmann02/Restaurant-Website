@@ -51,16 +51,16 @@
 				<div class="col-sm-2">
 					<div class ="form-group">
 						<label for="Availability">Available</label><br>
-						<input type="radio" id="Yes" name="Availability" value=true>
+						<input type="radio" id="Yes" name="Availability" value="true">
 						<label for="Yes">Yes</label><br>
-						<input type="radio" id="No" name="Availability" value=false>
+						<input type="radio" id="No" name="Availability" value="false">
 						<label for="No">No</label><br>
 					</div>
 				</div>
 				<div class="col-sm-4">
 					<div class ="form-group">
 						<label for="Price">Price</label><br>
-						<input type="Number" class="form-control" id="Price" name="Price" placeholder="Price of the meal" required>
+						<input type="Number" step="0.01" min=0 class="form-control" id="Price" name="Price" placeholder="Price of the meal" required>
 					</div>
 				</div>
 			</div>

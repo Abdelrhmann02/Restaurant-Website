@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{{>head}}
+</head>
+<body>
+	<header>
+		{{>header}}
+	</header>
+	<section class="admin-page">
+		<h1>Update Meal</h1>
+		{{#Meal_To_Update}}
+			<h5>{{Name}}</h5>
+			<div class="container">
+				<form method="post" role="form">
+					<div class="row">
+						<div class="col">
+							<div class ="form-group">
+								<label for="Name">Name</label>
+								<input type="text" class="form-control" id="Name" name="Name" placeholder="Name of the meal" value="{{Name}}" required>
+							</div>
+						</div>
+						<div class="col">
+							<div class ="form-group">
+								<label for="Description">Description</label>
+								<textarea  class="form-control" id="Description" name="Description" placeholder="Description of the meal" required>{{Description}}</textarea>
+							</div>
+						</div>
+						<div class="col">
+							<div class ="form-group">
+								<label for="Ingredients">Ingredients</label>
+								<textarea  class="form-control" id="Ingredients" name="Ingredients" placeholder="Ingredients of the meal" required>{{Ingerdients}}</textarea>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class ="form-group">
+								<label for="Allergy">Allergies</label>
+								<textarea  class="form-control" id="Allergy" name="Allergy" placeholder="Allergies of the meal" required>{{Allergy}}</textarea>
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class ="form-group">
+								{{#dinner}}
+									<label for="Category">Category</label><br>
+									<input type="radio" id="Lunch" name="Category" value="Lunch">
+									<label for="Lunch">Lunch</label><br>
+									<input type="radio" id="Dinner" name="Category" value="Dinner" checked>
+									<label for="Dinner">Dinner</label><br>
+								{{/dinner}}
+								{{#lunch}}
+									<label for="Category">Category</label><br>
+									<input type="radio" id="Lunch" name="Category" value="Lunch" checked>
+									<label for="Lunch">Lunch</label><br>
+									<input type="radio" id="Dinner" name="Category" value="Dinner">
+									<label for="Dinner">Dinner</label><br>
+								{{/lunch}}
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class ="form-group">
+							{{#Availability}}
+								<label for="Availability">Available</label><br>
+								<input type="radio" id="Yes" name="Availability" value=true checked>
+								<label for="Yes">Yes</label><br>
+								<input type="radio" id="No" name="Availability" value=false>
+								<label for="No">No</label><br>
+							{{/Availability}}
+							{{^Availability}}
+								<label for="Availability">Available</label><br>
+								<input type="radio" id="Yes" name="Availability" value=true>
+								<label for="Yes">Yes</label><br>
+								<input type="radio" id="No" name="Availability" value=false checked>
+								<label for="No">No</label><br>
+							{{/Availability}}
+
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class ="form-group">
+								<label for="Price">Price</label><br>
+								<input type="Number" step="0.01" min=0 class="form-control" id="Price" name="Price" placeholder="Price of the meal" value="{{price}}" required>
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col">
+							<div class="form-group">
+								<input type="submit" value="Update" class="btn2">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		{{/Meal_To_Update}}
+	</section>
+	
+	{{>script}}
+</body>
+</html>

@@ -74,6 +74,18 @@ class Menu{
         })
     }
 
+    search(id){
+        return new Promise((resolve,reject) => {
+            this.db.find({'_id': id}, function(err,entries){
+                if(err){
+                    reject(err);
+                }
+                else{
+                    resolve(entries);                }
+            })
+        })
+    }
+
     Delete(name){
         this.db.remove({'Name': name}, {}, function (err, numRemoved) {
             // numRemoved = 1
@@ -87,7 +99,7 @@ class Menu{
             Ingerdients: ingred.split(','),
             Allergy: allergy.split(','),
             Category: cat,
-            Availability: aval,
+            Availability: aval === "true",
             price: price
         }
         this.db.insert(entry, function(err,doc) {
@@ -100,6 +112,19 @@ class Menu{
             }
         })
     }
+
+    UpdateEntry(id,name,desc,ingred,allergy,cat,aval,Price){
+    var avaliable = aval === "true";
+    this.db.update({ _id: id },
+                   {$set:{ Name: name, Description: desc, Ingerdients: ingred, Allergy:allergy,Category:cat,Availability:avaliable,price: Price }},
+                   {}, (err, done) => {
+            if(err)
+                console.log("Error")
+            if(done)
+                console.log("Updated Successfully")
+          });
+    }
+
 }
 
 module.exports = Menu;

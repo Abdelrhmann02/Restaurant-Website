@@ -20,10 +20,15 @@ router.get('/logout',verify,controller.logout)
 router.get('/add_new',verify,controller.show_add_new)
 router.post('/add_new',verify,controller.post_add_new)
 
-router.get('/delete',controller.show_delete)
-router.post('/delete',controller.post_delete)
+router.get('/delete',verify,controller.show_delete)
+router.post('/delete',verify,controller.post_delete)
 
-router.get('/admin_menu',controller.admin_menu)
+router.get('/admin_menu',verify,controller.admin_menu)
+
+router.get('/update',verify,controller.show_update_page)
+router.get('/edit_meal/:id',verify,controller.edit_meal)
+router.post('/edit_meal/:id',verify,controller.post_edit_meal)
+
 
 //handle 404 requests
 router.use(function(req,res) {
