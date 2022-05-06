@@ -49,7 +49,20 @@ Follow the below instructions to intsall and run the project locally
 6. Then Naviage to (http://localhost:3000/) using your web browser to view the website.
 
 ## Features Implemented
+* Staff of the restaurant can log in into admin panel to do multiple operations:
+1. Add new meal.
+2. Delete meals completetly from database.
+3. Update meal information and make them available and not available easily.
+4. View all menu items including the non-available ones.
+5. Add new staff members by creating username and password for them.
 
+* Login in and Sign up funcunalities were added.
+* Authentication and Verification methods are applied through all operations.
+
+## Access the Admin Panel
+To access the admin panel for the first time, two users are added in the database:
+* username: fiona, password: 123
+* username: abdo, password: 1234
 ## Acknowledgments
 
 Photos of the website
