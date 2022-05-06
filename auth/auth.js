@@ -9,12 +9,10 @@ exports.login = function(req,res,next){
 
     UserDB.lookup(username,function(err,user){
         if(err){
-            console.log("error looking up user",err);
-            return res.status(401).send();
+            return res.status(401).send("error looking up user");
         }
         if(!user){
-            console.log("user "+username+" not found");
-            return res.status(401).send();
+            return res.status(401).render('errors/UserNotFound',{'user': username});
         }
 
         bcrypt.compare(password,user.password,function(err,result){
@@ -26,7 +24,7 @@ exports.login = function(req,res,next){
             }
             else
             { 
-                return res.status(403).send();
+                return res.status(403).render('errors/password');
             }
         });
     });
@@ -35,16 +33,16 @@ exports.login = function(req,res,next){
 exports.verify = function(req,res,next){
     let accessToken = req.cookies.jwt;
     if(!accessToken){
-        return res.status(403).send();
+        return res.status(403).render('errors/access');
     }
     jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, (err,data) =>{
         if(err)
         {
-            res.status(403).send();
+            return res.status(403).render('errors/access');
         }
         else{
-        req.user = data.username
-        next();
+            req.user = data.username
+            next();
         }
     })
 };

@@ -32,6 +32,7 @@ exports.menu = async (req, res) => {
 
 //Admin Login
 exports.show_login_page = function(req,res){
+  res.locals.title="Login"
   res.render('user/login');
 }
 
@@ -56,8 +57,15 @@ exports.show_add_new = function(req,res){
 
 //Handle Add New Meal Page
 exports.post_add_new = function(req,res){
-MenuDB.addEntry(req.body.Name,req.body.Description,req.body.Ingredients,req.body.Allergy,req.body.Category,req.body.Availability,req.body.Price);
-res.redirect('/admin_panel')
+ 
+  //to check if meal exists by its name
+  MenuDB.lookup(req.body.Name,function(err,u){
+    if(u){
+      return res.status(401).render('errors/MealExist',{'name': req.body.Name});
+    }
+    MenuDB.addEntry(req.body.Name,req.body.Description,req.body.Ingredients,req.body.Allergy,req.body.Category,req.body.Availability,req.body.Price);
+    res.redirect("/admin_panel"); 
+  });
 }
 
 //Show Delete Meal Page
@@ -134,17 +142,12 @@ exports.add_new_user = function(req,res)
   const user = req.body.username;
   const password = req.body.password;
 
-  if(!user || !password){
-    res.send(401, 'no user or no password')
-    return;
-  }
   UserDB.lookup(user,function(err,u){
     if(u){
-      res.send(401, "User exist: ",user);
-      return;
+      return res.status(401).render("errors/UserExist", {'user': user});
     }
     UserDB.create(user,password);
-    res.redirect("/admin_panel"); //to be modifed later
+    res.redirect("/admin_panel"); 
   });
 }
 

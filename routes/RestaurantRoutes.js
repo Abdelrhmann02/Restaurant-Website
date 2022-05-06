@@ -33,11 +33,11 @@ router.post('/edit_meal/:id',verify,controller.post_edit_meal)
 //handle 404 requests
 router.use(function(req,res) {
     res.status(404);
-    res.render('notfound');
+    res.render('errors/notfound');
 })
 
 router.use(function(err,req,res,next){
     res.status(500);
-    res.render("InternalError");
+    res.render("errors/InternalError");
 })
 module.exports = router;
