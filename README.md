@@ -4,7 +4,7 @@ Course Work project for Web Application Development 2 module at Glasgow Caledoia
 ## Description
 
 * Website for a fiction restaurant to show its daily updated menu and some information about the restaurant itself.
-* The website allows restaurant stuff to login into admin panel to be able to add, delete, edit,and view their menu items in order to keep their website updated regularly.
+* The website allows restaurant staff to login into admin panel to be able to add, delete, edit,and view their menu items in order to keep their website updated regularly.
 
 ## Built With
 
@@ -60,7 +60,8 @@ Follow the below instructions to intsall and run the project locally
 * Authentication and Verification methods are applied through all operations.
 
 ## Access the Admin Panel
-To access the admin panel for the first time, two users are added in the database:
+To access the admin panel, navigate to the route (/admin). 
+To log in for the first time, two users are added in the database:
 * username: fiona, password: 123
 * username: abdo, password: 1234
 ## Acknowledgments
