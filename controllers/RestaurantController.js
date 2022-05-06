@@ -79,12 +79,9 @@ exports.show_delete = function(req,res){
 
 //Handle Delete Meal Page
 exports.post_delete = function(req,res){
-  const Meals = req.body.Meal;
-  for (var i = 0; i < Meals.length; i++) {
-    MenuDB.Delete(Meals[i]);
-  }
+  MenuDB.Delete(req.body.Meal);
   res.redirect('/admin_panel')
-  };
+};
   
 //Show Admin Menu
 exports.admin_menu = async(req,res) => {

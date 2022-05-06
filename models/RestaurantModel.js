@@ -87,9 +87,7 @@ class Menu{
     }
 
     Delete(name){
-        this.db.remove({'Name': name}, {}, function (err, numRemoved) {
-            // numRemoved = 1
-          });
+        this.db.remove({'Name': name}, {}, function (err, Removed) {});
     }
 
     addEntry(name,desc,ingred,allergy,cat,aval,price){
