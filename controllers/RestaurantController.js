@@ -34,22 +34,32 @@ exports.menu = async (req, res) => {
     res.render("menu", { lunch, dinner});
   };
 
-exports.show_delete = async(req,res) =>{
-    res.locals.title = "Delete Meals";
-    const [Meals] =  await Promise.all([
-      MenuDB.GetAll()
-    ]);
-    res.render('delete', {Meals});
+exports.show_delete = function(req,res){
+  res.locals.title = "Delete Meals";
+  MenuDB.GetAll().then((items)=> {
+    res.render('delete', {'Meals': items})
+  }
+  )
 }
 
-exports.post_delete = async(req,res) => {
+exports.post_delete = function(req,res){
   const Meals = req.body.Meal;
   for (var i = 0; i < Meals.length; i++) {
     MenuDB.Delete(Meals[i]);
   }
-  res.redirect('/admin-panel')
+  res.redirect('/admin_panel')
   };
   
+exports.admin_menu = async(req,res) => {
+  res.locals.title = "Menu Items";
+  const [lunch,dinner] = await Promise.all([
+    MenuDB.GetAllLunch(),
+    MenuDB.GetAllDinner()
+  ]);
+
+  res.render("admin_menu", { lunch, dinner});
+}
+
 exports.show_register_page = function(req,res){
   res.locals.title ="Register Page";
   res.render('user/register');
@@ -70,7 +80,7 @@ exports.add_new_user = function(req,res)
       return;
     }
     UserDB.create(user,password);
-    res.redirect("/admin-panel"); //to be modifed later
+    res.redirect("/admin_panel"); //to be modifed later
   });
 }
 
@@ -79,12 +89,12 @@ exports.show_login_page = function(req,res){
 }
 
 exports.handle_login = function (req,res){
-  res.redirect('/admin-panel')
+  res.redirect('/admin_panel')
 }
 
 exports.admin_panel = function(req,res){
   res.locals.title = "Admin Panel";
-  res.render('adminpanel',{
+  res.render('admin_panel',{
     'user': req.user
   })
 }
@@ -100,6 +110,6 @@ exports.show_add_new = function(req,res){
 
 exports.post_add_new = function(req,res){
   MenuDB.addEntry(req.body.Name,req.body.Description,req.body.Ingredients,req.body.Allergy,req.body.Category,req.body.Availability,req.body.Price);
-  res.redirect('/admin-panel')
+  res.redirect('/admin_panel')
 }
 

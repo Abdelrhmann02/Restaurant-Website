@@ -14,7 +14,7 @@ router.post('/register',verify,controller.add_new_user);
 router.get('/admin',controller.show_login_page);
 router.post('/login',login,controller.handle_login);
 
-router.get('/admin-panel',verify,controller.admin_panel)
+router.get('/admin_panel',verify,controller.admin_panel)
 router.get('/logout',verify,controller.logout)
 
 router.get('/add_new',verify,controller.show_add_new)
@@ -22,6 +22,9 @@ router.post('/add_new',verify,controller.post_add_new)
 
 router.get('/delete',controller.show_delete)
 router.post('/delete',controller.post_delete)
+
+router.get('/admin_menu',controller.admin_menu)
+
 //handle 404 requests
 router.use(function(req,res) {
     res.status(404);

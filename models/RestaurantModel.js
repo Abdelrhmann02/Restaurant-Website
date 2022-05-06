@@ -26,10 +26,33 @@ class Menu{
             })
         })
     }
+    GetAllLunch(){
+        return new Promise((resolve,reject) => {
+            this.db.find({'Category': 'Lunch'}, function(err,entries){
+                if(err){
+                    reject(err);
+                }
+                else{
+                    resolve(entries);                }
+            })
+        })
+    }
 
     GetAvailableDinner(){
         return new Promise((resolve,reject) => {
             this.db.find({'Category': 'Dinner', $or: [{ 'Availability': 'true' }, { 'Availability': true }]}, function(err,entries){
+                if(err){
+                    reject(err);
+                }
+                else{
+                    resolve(entries);                }
+            })
+        })
+    }
+    
+    GetAllDinner(){
+        return new Promise((resolve,reject) => {
+            this.db.find({'Category': 'Dinner'}, function(err,entries){
                 if(err){
                     reject(err);
                 }
